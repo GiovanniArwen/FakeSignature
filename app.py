@@ -332,7 +332,7 @@ html, body, [class*="css"] {
 def load_model():
     try:
         import tensorflow as tf
-        model = tf.keras.models.load_model("best_model.h5")
+        model = tf.keras.models.load_model("FakeSignature.keras")
         return model, None
     except Exception as e:
         return None, str(e)
@@ -361,7 +361,7 @@ st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
 model, model_error = load_model()
 
 if model_error:
-    st.error(f"⚠️ Could not load model: `{model_error}`\n\nMake sure `best_model.h5` is in the same folder as `app.py`.")
+    st.error(f"⚠️ Could not load model: `{model_error}`\n\nMake sure `FakeSignature.keras` is in the same folder as `app.py`.")
     st.stop()
 
 # ─── Upload Section ──────────────────────────────────────────────────────────
